@@ -12,7 +12,6 @@
 # Optional globals:
 #   MEMORY
 #   TIMEOUT
-#   EXTRA_ARGS
 #   DEBUG
 
 source "$(dirname "$0")/common.sh"
@@ -33,21 +32,29 @@ run gcloud config set project $PROJECT --quiet ${gcloud_debug_args}
 
 ARGS_STRING=""
 
-if [ ! -z "${RUNTIME}" ]; then
-  ARGS_STRING="${ARGS_STRING} --runtime ${RUNTIME} "
-fi
-
 if [ ! -z "${PROJECT}" ]; then
   ARGS_STRING="${ARGS_STRING} --project=${PROJECT}"
+fi
+
+if [ ! -z "${RUNTIME}" ]; then
+  ARGS_STRING="${ARGS_STRING} --runtime=${RUNTIME} "
 fi
 
 if [ ! -z "${ENTRY_POINT}" ]; then
   ARGS_STRING="${ARGS_STRING} --entry-point=${ENTRY_POINT} "
 fi
 
+if [ ! -z "${MEMORY}" ]; then
+  ARGS_STRING="${ARGS_STRING} --memory=${MEMORY} "
+fi
+
+if [ ! -z "${TIMEOUT}" ]; then
+  ARGS_STRING="${ARGS_STRING} --timeout=${TIMEOUT} "
+fi
+
 info "Starting deployment GCP Cloud Function..."
 
-run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} ${EXTRA_ARGS} --source . ${gcloud_debug_args}
+run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} --source . ${gcloud_debug_args}
 
 if [ "${status}" -eq 0 ]; then
   success "Deployment successful."
