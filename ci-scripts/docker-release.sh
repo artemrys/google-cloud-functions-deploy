@@ -26,7 +26,7 @@ docker_login() {
 # Generate all tags.
 generate_tags() {
     if [[ "${BITBUCKET_BRANCH}" == "master" ]]; then
-        tags=("latest")
+        tags=("latest" "${BITBUCKET_BUILD_NUMBER}")
     else
         echo "ERROR: Can only push docker images from master branch."
         exit 1
