@@ -27,7 +27,7 @@ RUNTIME=${RUNTIME:?'RUNTIME variable missing.'}
 
 info "Setting up environment".
 
-run 'echo "${KEY_FILE}" | base64 -d >> /tmp/key-file.json'
+run 'echo "${KEY_FILE}" >> /tmp/key-file.json'
 run gcloud auth activate-service-account --key-file /tmp/key-file.json --quiet ${gcloud_debug_args}
 run gcloud config set project $PROJECT --quiet ${gcloud_debug_args}
 
