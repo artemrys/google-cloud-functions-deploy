@@ -1,1 +1,0 @@
-bitbucket-pipes-toolkit==1.1.0

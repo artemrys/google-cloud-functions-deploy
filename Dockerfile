@@ -1,11 +1,5 @@
-FROM python:3.7-slim
+FROM google/cloud-sdk:273.0.0
 
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
+COPY pipe /usr/bin/
 
-COPY pipe /
-COPY LICENSE.txt pipe.yml README.md /
-
-ENTRYPOINT ["python3", "/pipe.py"]
-
-
+ENTRYPOINT ["/usr/bin/pipe.sh"]

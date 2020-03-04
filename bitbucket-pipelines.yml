@@ -1,3 +1,16 @@
-pipe: atlassian/demo-pipe-python:0.1.0
-  variables:
-     NAME: "<string>"
+image:
+  name: atlassian/default-image:2
+
+push: &push
+  step:
+    name: Push and Tag
+    image: python:3.6.7
+    script:
+    - ./ci-scripts/docker-release.sh artemrys/$BITBUCKET_REPO_SLUG
+    services:
+    - docker
+
+pipelines:
+  branches:
+    master:
+    - <<: *push
