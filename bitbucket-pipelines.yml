@@ -1,0 +1,3 @@
+pipe: atlassian/demo-pipe-python:0.1.0
+  variables:
+     NAME: "<string>"

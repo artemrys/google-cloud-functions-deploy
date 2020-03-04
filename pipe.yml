@@ -1,0 +1,9 @@
+name: Google Cloud Function Deploy Pipeline
+image: bitbucketpipelines/google-cloud-function-deploy:0.1.0
+description: Deploys code to Google Cloud Function.
+repository: 
+maintainer: rysartem@gmail.com
+tags:
+  - bitbucket-pipelines
+  - pipes
+  - python
