@@ -47,7 +47,7 @@ fi
 
 info "Starting deployment GCP Cloud Function..."
 
-run gcloud functions deploy ${FUNCTION_NAME} ${ARGS_STRING} ${EXTRA_ARGS} --source . ${gcloud_debug_args}
+run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} ${EXTRA_ARGS} --source . ${gcloud_debug_args}
 
 if [ "${status}" -eq 0 ]; then
   success "Deployment successful."
