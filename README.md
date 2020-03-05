@@ -81,7 +81,7 @@ If you are reporting an issue, please include:
 * steps to reproduce
 
 ## License
-Copyright (c) 2018 Atlassian and others.
+Copyright (c) 2020 Artem Rys.
 Apache 2.0 licensed, see [LICENSE.txt](LICENSE.txt) file.
 
 [gcf]: https://cloud.google.com/functions
