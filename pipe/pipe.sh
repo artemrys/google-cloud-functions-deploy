@@ -12,6 +12,7 @@
 # Optional globals:
 #   MEMORY
 #   TIMEOUT
+#   EXTRA_ARGS
 #   DEBUG
 
 source "$(dirname "$0")/common.sh"
@@ -54,7 +55,7 @@ fi
 
 info "Starting deployment GCP Cloud Function..."
 
-run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} --source . ${gcloud_debug_args}
+run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} --source . ${EXTRA_ARGS} ${gcloud_debug_args}
 
 if [ "${status}" -eq 0 ]; then
   success "Deployment successful."

@@ -16,6 +16,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
     RUNTIME: '<string>'
     # MEMORY: '<string>'  [Optional]
     # TIMEOUT: '<string>'  [Optional]
+    # EXTRA_ARGS: '<string>' [Optional]
     # DEBUG: '<string>'  [Optional]
 ```
 
@@ -30,6 +31,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
 | RUNTIME (*)                   |  The runtime of the Cloud Function. |
 | MEMORY                        |  The memory limit of the Cloud Function. |
 | TIMEOUT                       |  The timeout of the Cloud Function. |
+| EXTRA_ARGS                    |  Extra arguments to be passed to the CLI. |
 | DEBUG                         |  Turn on extra debug information. Default `false`. |
 
 _(*) = required variable._
@@ -67,6 +69,7 @@ _(*) = required variable._
     RUNTIME: 'python37'
     MEMORY: '256MB'
     TIMEOUT: '60'
+    EXTRA_ARGS: '--logging=debug'
 ```
 
 ## Supports
