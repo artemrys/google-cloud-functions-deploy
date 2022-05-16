@@ -18,6 +18,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
     # TIMEOUT: '<string>'  [Optional]
     # EXTRA_ARGS: '<string>' [Optional]
     # DEBUG: '<string>'  [Optional]
+    # SOURCE: '<string>' [Optional]
 ```
 
 ## Variables
@@ -33,6 +34,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
 | TIMEOUT                       |  The timeout of the Cloud Function. |
 | EXTRA_ARGS                    |  Extra arguments to be passed to the CLI. |
 | DEBUG                         |  Turn on extra debug information. Default `false`. |
+| SOURCE                        |  Path to the source of the Google Cloud Function. Default '.' |
 
 _(*) = required variable._
 

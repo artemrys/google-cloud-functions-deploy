@@ -14,6 +14,7 @@
 #   TIMEOUT
 #   EXTRA_ARGS
 #   DEBUG
+#   SOURCE
 
 source "$(dirname "$0")/common.sh"
 enable_debug
@@ -53,9 +54,15 @@ if [ ! -z "${TIMEOUT}" ]; then
   ARGS_STRING="${ARGS_STRING} --timeout=${TIMEOUT} "
 fi
 
+if [ ! -z "${SOURCE}" ]; then
+  ARGS_STRING="${ARGS_STRING} --source=${SOURCE} "
+else
+  ARGS_STRING="${ARGS_STRING} --source . "
+fi
+
 info "Starting deployment GCP Cloud Function..."
 
-run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} --source . ${EXTRA_ARGS} ${gcloud_debug_args}
+run gcloud functions deploy ${FUNCTION_NAME} --trigger-http ${ARGS_STRING} ${EXTRA_ARGS} ${gcloud_debug_args}
 
 if [ "${status}" -eq 0 ]; then
   success "Deployment successful."
