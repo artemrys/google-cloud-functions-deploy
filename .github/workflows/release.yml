@@ -2,8 +2,8 @@ name: Publish Docker image
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   push_to_registry:
@@ -20,6 +20,11 @@ jobs:
         uses: docker/metadata-action@v4.0.1
         with:
           images: artemrys/google-cloud-functions-deploy
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
       - name: Build and push Docker image
         uses: docker/build-push-action@v3.0.0
         with:
