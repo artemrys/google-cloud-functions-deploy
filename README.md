@@ -19,6 +19,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
     # EXTRA_ARGS: '<string>' [Optional]
     # DEBUG: '<string>'  [Optional]
     # SOURCE: '<string>' [Optional]
+    # TRIGGER: '<string>' [Optional]
 ```
 
 ## Variables
@@ -35,6 +36,7 @@ Add the following snippet to the script section of your `bitbucket-pipelines.yml
 | EXTRA_ARGS                    |  Extra arguments to be passed to the CLI. |
 | DEBUG                         |  Turn on extra debug information. Default `false`. |
 | SOURCE                        |  Path to the source of the Google Cloud Function. Default '.' |
+| TRIGGER                       |  Trigger command-line flag. [More details](https://cloud.google.com/functions/docs/concepts/events-triggers) Default '--trigger-http'. |
 
 _(*) = required variable._
 
