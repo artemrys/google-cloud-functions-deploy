@@ -74,16 +74,8 @@ _(*) = required variable._
     EXTRA_ARGS: '--logging=debug'
 ```
 
-## Supports
-If you would like help with this pipe, or you have an issue or feature request, go to [Bitbucket repo][bitbucket_repo].
-
-If you are reporting an issue, please include:
-
-* relevant logs and error messages
-* steps to reproduce
-
 ## License
-Copyright (c) 2020 Artem Rys.
+Copyright (c) 2022 Artem Rys.
 Apache 2.0 licensed, see [LICENSE.txt](LICENSE.txt) file.
 
 [gcf]: https://cloud.google.com/functions
