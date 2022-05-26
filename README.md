@@ -2,6 +2,13 @@
 
 Pipe to deploy a function to [Google Cloud Function][gcf].
 
+## Packages
+
+Packages are deployed to both Dockerhub and Github Packages:
+
+* [Github Packages](https://github.com/artemrys/google-cloud-functions-deploy/pkgs/container/google-cloud-functions-deploy)
+* [Dockerhub](https://hub.docker.com/r/artemrys/google-cloud-functions-deploy)
+
 ## YAML Definition
 
 Add the following snippet to the script section of your `bitbucket-pipelines.yml` file:
