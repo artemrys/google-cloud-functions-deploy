@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
+    branches:
+      - release-to-github-packages
 
 jobs:
   push_to_registry:
@@ -28,7 +30,6 @@ jobs:
         uses: docker/metadata-action@v4.0.1
         with:
           images: |
-            artemrys/google-cloud-functions-deploy
             ghcr.io/${{ github.repository }}
           tags: |
             type=ref,event=branch
@@ -40,5 +41,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: |
+            ghcr.io/${{ github.repository }}:0.2.0
+            ghcr.io/${{ github.repository }}:0.2
+            ghcr.io/${{ github.repository }}:latest
           labels: ${{ steps.meta.outputs.labels }}
