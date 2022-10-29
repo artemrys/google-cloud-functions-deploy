@@ -83,6 +83,10 @@ _(*) = required variable._
     EXTRA_ARGS: '--logging=debug'
 ```
 
+## Testing
+
+Test repository in Bitbucket is located [here](https://bitbucket.org/ArtemRys/google-cloud-functions-deploy-test-repo).
+
 ## License
 Copyright (c) 2022 Artem Rys.
 Apache 2.0 licensed, see [LICENSE.txt](LICENSE.txt) file.
