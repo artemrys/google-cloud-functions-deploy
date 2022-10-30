@@ -87,6 +87,10 @@ _(*) = required variable._
 
 Test repository in Bitbucket is located [here](https://bitbucket.org/ArtemRys/google-cloud-functions-deploy-test-repo).
 
+## Releasing
+
+To release a new version of the image to both Github Packages and Dockerhub, you just need to tag a specific commit and push it to the repository. Github Actions job will do the rest.
+
 ## License
 Copyright (c) 2022 Artem Rys.
 Apache 2.0 licensed, see [LICENSE.txt](LICENSE.txt) file.
