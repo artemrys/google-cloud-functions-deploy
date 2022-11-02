@@ -4,9 +4,9 @@ Pipe to deploy a function to [Google Cloud Function][gcf].
 
 ## Packages
 
-Packages are deployed to both Dockerhub and Github Packages:
+Packages are deployed to both Dockerhub and GitHub Packages:
 
-* [Github Packages](https://github.com/artemrys/google-cloud-functions-deploy/pkgs/container/google-cloud-functions-deploy)
+* [GitHub Packages](https://github.com/artemrys/google-cloud-functions-deploy/pkgs/container/google-cloud-functions-deploy)
 * [Dockerhub](https://hub.docker.com/r/artemrys/google-cloud-functions-deploy)
 
 ## YAML Definition
@@ -89,7 +89,7 @@ Test repository in Bitbucket is located [here](https://bitbucket.org/ArtemRys/go
 
 ## Releasing
 
-To release a new version of the image to both Github Packages and Dockerhub, you just need to tag a specific commit and push it to the repository. Github Actions job will do the rest.
+To release a new version of the image to both GitHub Packages and Dockerhub, you just need to tag a specific commit and push it to the repository. GitHub Actions job will do the rest.
 
 ## License
 Copyright (c) 2022 Artem Rys.
