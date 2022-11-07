@@ -1,4 +1,4 @@
-FROM google/cloud-sdk:406.0.0
+FROM google/cloud-sdk:408.0.1
 
 COPY pipe /usr/bin/
 
